@@ -9,9 +9,16 @@ class SecureRandomController
     public function getSecureRandom()
     {
         try {
-            // Get parameters from request (if any)
-            $min = isset($_GET['min']) ? (int)$_GET['min'] : 0;
-            $max = isset($_GET['max']) ? (int)$_GET['max'] : PHP_INT_MAX;
+            // Check if both min and max parameters are set
+            if (!isset($_GET['min']) || !isset($_GET['max'])) {
+                http_response_code(400);
+                echo json_encode(['error' => 'Both min and max parameters are required']);
+                return; // stop execution
+            }
+
+            // Get parameters from request
+            $min = (int)$_GET['min'];
+            $max = (int)$_GET['max'];
 
             // Validate parameters
             if ($min < 0 || $max < 0 || $min > $max) {
