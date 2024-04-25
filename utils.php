@@ -8,7 +8,7 @@ class Utils {
      *
      * @param int $min
      * @param int $max
-     * @return void
+     * @return int
      */
     static function getSecureRandom($min, $max) {
 		$range = $max - $min;
@@ -30,5 +30,3 @@ class Utils {
 		return $min + $rnd;
 	}
 }
-
-?>
