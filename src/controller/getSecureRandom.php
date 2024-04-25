@@ -13,8 +13,7 @@ $max = isset($_GET['max']) ? (int)$_GET['max'] : PHP_INT_MAX;
 // Validate parameters
 if ($min < 0 || $max < 0 || $min > $max) {
     http_response_code(400);
-    echo json_encode(['error' => 'Invalid parameters']);
-    exit;
+    return json_encode(['error' => 'Invalid parameters']);
 }
 
 // Generate random number
