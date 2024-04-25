@@ -9,6 +9,7 @@ class SecureRandomController
     public function getSecureRandom()
     {
         try {
+            
             // Check if both min and max parameters are set
             if (!isset($_GET['min']) || !isset($_GET['max'])) {
                 http_response_code(400);
