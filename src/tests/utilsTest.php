@@ -8,8 +8,8 @@ class UtilsTest extends TestCase
     public function testBounds()
     {
         // Test if generated numbers are within the specified range
-        $min = 10;
-        $max = 20;
+        $min = 40;
+        $max = 50;
         $random_number = Utils::getSecureRandom($min, $max);
 
         $this->assertGreaterThanOrEqual($min, $random_number);
