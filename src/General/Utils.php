@@ -14,9 +14,11 @@ class Utils
 	static function getSecureRandom($min, $max)
 	{
 		$range = $max - $min;
-
+		if ($range === 0) {
+			return $min;
+		}
 		// calculate the number of bytes required to represent the range
-		$bytes_to_fetch = (int) ceil(log($range, 2) / 8);
+		$bytes_to_fetch = (int) ceil(log($range, 2) / 8) + 1;
 
 		do {
 			// Generate random bytes
@@ -29,6 +31,9 @@ class Utils
 			$adjusted  = $rnd % $range;
 		} while ($adjusted  >= $range);
 
+		if ($adjusted === $range) {
+			$adjusted = $max;
+		}
 		return $min + $adjusted;
 	}
 }
