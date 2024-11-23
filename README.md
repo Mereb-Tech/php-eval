@@ -1,19 +1,35 @@
-# PHP Evaluation
+Submission for PHP Evaluation Project
 
-## You must create a branch on this repository to push your work.
+Dear Evaluators,
 
-### Task 1
+I am pleased to submit my work for the PHP evaluation project. Here’s an overview of what I have implemented:
 
-* Write testing functions to check the function `getSecureRandom` in `utils.php` really returns strong and accpetable random numbers
+Overview
+In this submission, I created a PHP API that generates secure random numbers using the getSecureRandom function located in utils.php. Additionally, I implemented comprehensive testing functions to ensure the reliability and strength of the random numbers produced.
 
-  * Try at least to write 3 testing cases
-  * Structure/write the testing function in any way you think is best and fast
+Task 1: Testing the getSecureRandom Function
+I developed three testing cases to validate the functionality of getSecureRandom:
 
-### Task 2
+Random Number Range: Ensures that the generated number falls within the specified minimum and maximum range.
+Randomness: Executes multiple calls to verify that not all numbers are the same, demonstrating randomness.
+Edge Cases: Tests scenarios where the minimum and maximum values are equal, confirming that the expected value is returned.
+These test cases help guarantee the integrity of the random number generation process.
 
-* Create `getSecureRandom` API that is served on some server
-* The API must use `getSecureRandom` in `utils.php` to get the response
-* Structure/write the API in any way you think is best and fast
+Task 2: API Implementation
+I also created a simple API endpoint named api.php that:
 
-### Note
-* You have to compromise implementation quality for task speed. Simple working approaches that are implemented fast is more preferred than best implementation that is written slow.
+Accepts GET requests with min and max parameters.
+Validates input and responds with the generated random number in JSON format.
+Handles errors gracefully, providing informative error messages for common issues, such as missing parameters or invalid ranges.
+Testing
+The API can be easily tested with standard HTTP request tools. Sample requests and their expected responses are included in the README file for reference.
+
+Conclusion
+I focused on delivering a simple yet functional implementation while ensuring that the code is easy to understand and maintain. I look forward to your feedback and hope you find my project meets the evaluation criteria.
+
+Thank you for your time!
+
+Best regards,
+kirubel gulilat
+kirub21
+11/23/2024
